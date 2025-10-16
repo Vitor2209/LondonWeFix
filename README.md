@@ -1,4 +1,4 @@
-🌐 WEFIX London - Website Oficial
+🌐 WEFIX London - Official Website
 
 
 
@@ -7,92 +7,62 @@
 
 
 
-Website profissional da WEFIX London, empresa líder em serviços residenciais e comerciais de encanamento, aquecimento, elétrica, drenagem e manutenção em toda Londres.
-Este projeto é uma versão estática moderna, leve e totalmente responsiva.
+WEFIX London is a professional service company providing plumbing, heating, electrical, drainage, and maintenance solutions across London.
+This is the static version of the website — fast, lightweight, and fully responsive — built with pure HTML, CSS, and JavaScript.
 
-🌟 Características
-🧱 Estrutura Simples e Eficiente
+🌟 Features
+🧱 Simple & Efficient Structure
 
-✅ HTML5 Semântico para melhor SEO e acessibilidade
+✅ Semantic HTML5 for better SEO and accessibility
 
-✅ CSS3 Responsivo com grid e flexbox
+✅ Responsive CSS3 using Flexbox and Grid
 
-✅ JavaScript Puro (ES6+) para interatividade leve e rápida
+✅ Vanilla JavaScript (ES6+) for smooth interactivity
 
-✅ Design Moderno e Minimalista inspirado na identidade WEFIX
+✅ Modern, Minimal Design aligned with WEFIX branding
 
-✅ Menu Hambúrguer animado para dispositivos móveis
+✅ Animated Hamburger Menu for mobile devices
 
-✅ Cabeçalho Fixo (Sticky Header) com efeito de rolagem
+✅ Sticky Header with scroll effect
 
-✅ Animações Suaves com transições em CSS
+✅ Smooth CSS Animations & Transitions
 
-✅ Imagens Reais via Unsplash
+✅ Real Images via Unsplash
 
-✅ 17 Páginas Completas — Home + 8 serviços + 8 informativas
-
-🚀 Instalação Rápida
-# Clone o repositório
-git clone https://github.com/SEU_USUARIO/wefix-london-static.git
-cd wefix-london-static
-
-# Abra o site
-# Basta abrir o arquivo index.html no navegador
-
-
-💡 Dica: Se quiser rodar localmente com um servidor simples:
-
-# Python
-python -m http.server 8080
-
-
-ou use a extensão Live Server no VSCode.
-
-📁 Estrutura de Pastas
-wefix-london-static/
-├── index.html           # Página principal
-├── services/            # Páginas de serviços (encanamento, elétrica etc.)
-├── about/               # Páginas institucionais
-├── css/
-│   └── style.css        # Estilos principais
-├── js/
-│   └── main.js          # Scripts e animações
-├── img/
-│   └── ...              # Imagens otimizadas
-└── README.md
+✅ 17 Complete Pages — Home + 8 service pages + 8 info pages
 
 🎨 Design
 
-Paleta Oficial WEFIX:
+Official WEFIX Colors:
 
-Azul Principal: #5B7BA6
+Blue: #5B7BA6
 
-Amarelo Destaque: #FFE500
+Yellow: #FFE500
 
-Vermelho Emergência: #e74c3c
+Red (Emergency): #e74c3c
 
-Tipografia:
+Typography:
 
-Poppins, Open Sans, ou Inter para visual moderno e limpo.
+Recommended fonts: Poppins, Open Sans, or Inter for a clean, modern look.
 
-📞 Contato
+📞 Contact
 
 WEFIX London
-📍 Londres, Reino Unido
-📞 Telefone: 020 7889 1111
+📍 London, United Kingdom
+📞 Phone: 020 7889 1111
 📧 Email: info@wefix.london
 
 🌐 Website: www.wefix.london
 
-🧰 Tecnologias Usadas
+🧰 Technologies Used
 
-HTML5 — Estrutura semântica
+HTML5 — Semantic structure
 
-CSS3 — Layout responsivo e design moderno
+CSS3 — Responsive layout & design
 
-JavaScript (ES6+) — Interatividade e efeitos dinâmicos
+JavaScript (ES6+) — Interactive features
 
-📜 Licença
+📜 License
 
-Este projeto é de uso livre para fins de aprendizado e demonstração.
-© 2025 WEFIX London – Todos os direitos reservados.
+This project is open for educational and demonstration purposes.
+© 2025 WEFIX London – All rights reserved.
