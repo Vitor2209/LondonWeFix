@@ -1,5 +1,7 @@
 🌐 WEFIX London - Official Website
 
+![WEFIX Logo](https://img.shields.io/badge/WEFIX-London-5B7BA6?style=for-the-badge)
+
 
 
 
