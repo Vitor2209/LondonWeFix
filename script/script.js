@@ -30,9 +30,34 @@ if (hamburger && navMenu) {
 const playButton = document.querySelector('.play-button');
 if (playButton) {
     playButton.addEventListener('click', () => {
-        alert('Video player functionality - In a real implementation, this would play a video');
+        const placeholder = playButton.parentElement; // o contêiner da área do vídeo
+
+        // Iframe do YouTube
+        placeholder.innerHTML = `
+            <iframe width="560" height="315"
+                src="https://youtu.be/Vh0xJUwcyOc?si=XwBwo_ULlxC4Ogs6"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        `;
     });
 }
+
+ window.addEventListener('DOMContentLoaded', () => {
+        const videoContainer = document.querySelector('.video-placeholder');
+        videoContainer.innerHTML = `
+            <iframe width="100%" height="100%"
+                src="https://youtu.be/Vh0xJUwcyOc?si=XwBwo_ULlxC4Ogs6"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        `;
+    });
+
 
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -47,3 +72,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+

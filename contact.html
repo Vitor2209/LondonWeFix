@@ -1,10 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Contact Us - WEFIX London</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/styles.css" />
+
+    <!-- Estilos específicos do formulário (pequena extensão sobre seu styles.css para manter tudo consistente) -->
+    <style>
+      /* Form container adjustments to fit your existing layout */
+      .contact-form-wrap {
+        margin-top: 20px;
+      }
+
+      .wefix-form {
+        width: 100%;
+        display: block;
+      }
+
+      .wefix-form .form-row {
+        margin-bottom: 20px;
+      }
+
+      .wefix-form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 700;
+        color: #2c3e50;
+      }
+
+      .wefix-form input[type="text"],
+      .wefix-form input[type="email"],
+      .wefix-form input[type="tel"],
+      .wefix-form select,
+      .wefix-form textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 16px;
+        font-family: inherit;
+        box-sizing: border-box;
+      }
+
+      .wefix-form textarea { resize: vertical; min-height: 120px; }
+
+      .wefix-btn-submit {
+        background-color: #FFE500;
+        color: #5B7BA6;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 800;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.25s ease, transform 0.15s ease;
+        display: inline-block;
+      }
+
+      .wefix-btn-submit:hover {
+        background-color: #FFDD00;
+        transform: translateY(-2px);
+      }
+
+      .wefix-success {
+        display: none;
+        margin-top: 18px;
+        padding: 12px 16px;
+        border-radius: 6px;
+        background: #e9f7ee;
+        color: #1b6b2b;
+        font-weight: 700;
+      }
+
+      /* Small responsive tweak to match your layout */
+      @media (max-width: 768px) {
+        .wefix-btn-submit { width: 100%; }
+      }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -39,7 +112,7 @@
                     <li><a href="roofing.html">ROOFING</a></li>
                     <li><a href="building.html">BUILDING</a></li>
                     <li><a href="bathrooms.html">BATHROOMS</a></li>
-                    <li><a href="emergency.html">EMERGENCY</a></li>
+                    <li><a href="emergency.html" id="red">EMERGENCY</a></li>
                     <li><a href="contact.html">CONTACT US</a></li>
                     <li><a href="rates.html">RATES</a></li>
                     <li><a href="reviews.html">REVIEWS</a></li>
@@ -85,40 +158,60 @@
 
                 <div>
                     <h2>Send Us a Message</h2>
-                    <form style="margin-top: 20px;">
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Name *</label>
-                            <input type="text" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+
+                    <!-- INÍCIO: FORMULÁRIO SUBSTITUÍDO (copiar/colar este arquivo substitui o antigo) -->
+                    <div class="contact-form-wrap">
+                      <form id="contactForm" class="wefix-form" action="https://formsubmit.co/info@londonwefix.co.uk" method="POST" novalidate>
+                        
+                        <div class="form-row">
+                          <label for="name">Name *</label>
+                          <input id="name" name="name" type="text" required autocomplete="name" />
                         </div>
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Email *</label>
-                            <input type="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+
+                        <div class="form-row">
+                          <label for="email">Email *</label>
+                          <input id="email" name="email" type="email" required autocomplete="email" />
                         </div>
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Phone *</label>
-                            <input type="tel" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+
+                        <div class="form-row">
+                          <label for="phone">Phone *</label>
+                          <input id="phone" name="phone" type="tel" required autocomplete="tel" />
                         </div>
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Service Required *</label>
-                            <select required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
-                                <option value="">Select a service</option>
-                                <option value="plumbing">Plumbing</option>
-                                <option value="heating">Heating</option>
-                                <option value="drains">Drains</option>
-                                <option value="electrics">Electrics</option>
-                                <option value="aircon">Air Conditioning</option>
-                                <option value="roofing">Roofing</option>
-                                <option value="building">Building</option>
-                                <option value="bathrooms">Bathrooms</option>
-                                <option value="emergency">Emergency</option>
-                            </select>
+
+                        <div class="form-row">
+                          <label for="service">Service Required *</label>
+                          <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="Plumbing">Plumbing</option>
+                            <option value="Heating">Heating</option>
+                            <option value="Drains">Drains</option>
+                            <option value="Electrics">Electrics</option>
+                            <option value="Air Conditioning">Air Conditioning</option>
+                            <option value="Roofing">Roofing</option>
+                            <option value="Building">Building</option>
+                            <option value="Bathrooms">Bathrooms</option>
+                            <option value="Emergency">Emergency</option>
+                          </select>
                         </div>
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Message *</label>
-                            <textarea required rows="5" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; resize: vertical;"></textarea>
+
+                        <div class="form-row">
+                          <label for="message">Message *</label>
+                          <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" style="background-color: #FFE500; color: #5B7BA6; padding: 15px 40px; border: none; border-radius: 5px; font-weight: bold; font-size: 18px; cursor: pointer; transition: background-color 0.3s ease;">SEND MESSAGE</button>
-                    </form>
+
+                        <button type="submit" class="wefix-btn-submit">SEND MESSAGE</button>
+
+                        <!-- Mensagem de sucesso (aparecerá na mesma página) -->
+                        <p id="formMessage" class="wefix-success">✅ Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+
+                        <!-- Configurações extras FormSubmit -->
+                        <input type="hidden" name="_captcha" value="false" />
+                        <!-- Opcional: você pode adicionar um campo _subject para personalizar o assunto do e-mail -->
+                        <input type="hidden" name="_subject" value="Novo contato pelo site WEFIX London" />
+                      </form>
+                    </div>
+                    <!-- FIM: FORMULÁRIO -->
+
                 </div>
             </div>
 
@@ -158,7 +251,7 @@
                 <div class="footer-section">
                     <h4>Contact</h4>
                     <p>Phone: 020 7889 1111</p>
-                    <p>Email: info@wefix.london</p>
+                    <p>Email: info@londonwefix.co.uk</p>
                     <p>24/7 Emergency Service</p>
                 </div>
             </div>
@@ -168,6 +261,60 @@
         </div>
     </footer>
 
+    <!-- Seus scripts existentes (menu, vídeo, etc) -->
     <script src="script/script.js"></script>
+
+    <!-- Script do formulário (fetch + exibição de mensagem sem redirecionamento) -->
+    <script>
+      (function () {
+        const form = document.getElementById('contactForm');
+        const msgEl = document.getElementById('formMessage');
+
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          // esconder mensagem anterior (se houver)
+          msgEl.style.display = 'none';
+
+          // desativar botão pra evitar envios duplicados
+          const submitBtn = form.querySelector('button[type="submit"]');
+          submitBtn.disabled = true;
+          submitBtn.setAttribute('aria-disabled', 'true');
+
+          fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: {
+              // não setar Content-Type - deixa o browser definir o boundary para multipart/form-data
+            }
+          })
+            .then(response => {
+              if (response.ok) {
+                // resetar formulário e mostrar mensagem de sucesso
+                form.reset();
+                msgEl.style.display = 'block';
+
+                // reabilitar botão depois de um breve delay
+                setTimeout(() => {
+                  submitBtn.disabled = false;
+                  submitBtn.removeAttribute('aria-disabled');
+                }, 800);
+              } else {
+                // resposta não-ok: mostrar alerta e reabilitar botão
+                alert('❌ Ocorreu um problema ao enviar a mensagem. Por favor, tente novamente.');
+                submitBtn.disabled = false;
+                submitBtn.removeAttribute('aria-disabled');
+              }
+            })
+            .catch(err => {
+              alert('⚠️ Erro ao enviar: ' + (err && err.message ? err.message : 'Verifique sua conexão.'));
+              submitBtn.disabled = false;
+              submitBtn.removeAttribute('aria-disabled');
+            });
+        });
+      })();
+    </script>
 </body>
 </html>
