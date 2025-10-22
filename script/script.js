@@ -26,50 +26,65 @@ if (hamburger && navMenu) {
     });
 }
 
-// Video Play Button
-const playButton = document.querySelector('.play-button');
-if (playButton) {
-    playButton.addEventListener('click', () => {
-        const placeholder = playButton.parentElement; // o contêiner da área do vídeo
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
 
-        // Iframe do YouTube
-        placeholder.innerHTML = `
-            <iframe width="560" height="315"
-                src="https://youtu.be/Vh0xJUwcyOc?si=XwBwo_ULlxC4Ogs6"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
-        `;
+  if (!slides || slides.length === 0) return;
+
+  let index = 0;
+  let autoTimer = null;
+  const AUTO_INTERVAL = 4000; // troca a cada 4 segundos
+
+  function showSlide(i) {
+    index = (i + slides.length) % slides.length;
+    slides.forEach((s, idx) => {
+      if (idx === index) s.classList.add('active');
+      else s.classList.remove('active');
     });
-}
+  }
 
- window.addEventListener('DOMContentLoaded', () => {
-        const videoContainer = document.querySelector('.video-placeholder');
-        videoContainer.innerHTML = `
-            <iframe width="100%" height="100%"
-                src="https://youtu.be/Vh0xJUwcyOc?si=XwBwo_ULlxC4Ogs6"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
-        `;
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      showSlide(index - 1);
+      restartAuto();
     });
+  }
 
-
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      showSlide(index + 1);
+      restartAuto();
     });
+  }
+
+  function startAuto() {
+    stopAuto();
+    autoTimer = setInterval(() => {
+      showSlide(index + 1);
+    }, AUTO_INTERVAL);
+  }
+
+  function stopAuto() {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  }
+
+  function restartAuto() {
+    stopAuto();
+    startAuto();
+  }
+
+  showSlide(0);
+  startAuto();
+
+  const carouselContainer = document.querySelector('.carousel-container');
+  if (carouselContainer) {
+    carouselContainer.addEventListener('mouseenter', stopAuto);
+    carouselContainer.addEventListener('mouseleave', startAuto);
+  }
 });
 
