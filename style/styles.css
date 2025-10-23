@@ -1,6 +1,108 @@
-Otimizar a interface mobile do site, com foco em usabilidade e clareza, além de aplicar melhorias no CSS para um design mais consistente e moderno."
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
 
-"Refatorar o layout mobile para maior intuitividade e clareza, com ajustes no CSS para aprimorar o estilo e a experiência do usuário."   
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER GERAL (mantém seu estilo atual) */
+.header {
+    background-color: #5B7BA6;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-bar {
+    background-color: #4A6A96;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-header {
+    background-color: transparent;
+    border: 2px solid #FFE500;
+    color: #FFE500;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.btn-header:hover {
+    background-color: #FFE500;
+    color: #5B7BA6;
+}
+
+/* ========= VERSÃO MOBILE ========= */
+@media (max-width: 768px) {
+    
+    /* ====== AJUSTE DOS BOTÕES HEADER (versão mobile) ====== */
+    .header-actions {
+        display: flex;
+        flex-direction: row;      /* agora ficam lado a lado */
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;          /* quebra pra próxima linha se precisar */
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .btn-header {
+        flex: 1 1 auto;
+        min-width: 110px;
+        text-align: center;
+        padding: 8px 10px;
+        font-size: 13px;
+        margin: 0;
+    }
+
+    /* ✅ CORREÇÃO FINAL — botões lado a lado no MOBILE sem afetar desktop/menu */
+@media (max-width: 768px) {
+  .header-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .btn-header {
+    flex: 1 1 auto;
+    min-width: 100px;
+    padding: 8px 12px;
+    font-size: 13px;
+    text-align: center;
+  }
+}
+    
 
 
     .top-bar {
