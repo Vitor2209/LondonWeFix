@@ -59,72 +59,43 @@ body {
     color: #5B7BA6;
 }
 
-/* ========= VERSÃO MOBILE ========= */
+/* ========= VERSÃO MOBILE - ALTERAÇÕES APLICADAS AQUI ========= */
 @media (max-width: 768px) {
-    
-    /* ====== AJUSTE DOS BOTÕES HEADER (versão mobile) ====== */
-    .header-actions {
-        display: flex;
-        flex-direction: row;      /* agora ficam lado a lado */
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;          /* quebra pra próxima linha se precisar */
-        gap: 8px;
-        padding: 8px;
+    .header {
+        position: fixed; /* MANTIDO FIXO */
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        padding: 0.3rem 0;
     }
-
-    .btn-header {
-        flex: 1 1 auto;
-        min-width: 110px;
-        text-align: center;
-        padding: 8px 10px;
-        font-size: 13px;
-        margin: 0;
-    }
-
-    /* ✅ CORREÇÃO FINAL — botões lado a lado no MOBILE sem afetar desktop/menu */
-@media (max-width: 768px) {
-  .header-actions {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 8px;
-  }
-
-  .btn-header {
-    flex: 1 1 auto;
-    min-width: 100px;
-    padding: 8px 12px;
-    font-size: 13px;
-    text-align: center;
-  }
-}
-    
-
 
     .top-bar {
         padding: 6px;
         font-size: 12px;
     }
 
+    /* ALTERAÇÃO 1: Garante que os botões fiquem lado a lado */
     .header-actions {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
+        flex-direction: row; /* LADO A LADO */
+        justify-content: space-between; /* Distribui o espaço */
         align-items: center;
         flex-wrap: nowrap;
-        gap: 5px;
-        padding: 8px;
+        padding: 8px 10px; /* Padding ajustado */
+        gap: 5px; 
     }
 
+    /* ALTERAÇÃO 2: Ajusta os botões para dividirem o espaço de forma uniforme */
     .btn-header {
-        flex: 1 1 auto;
-        padding: 6px 8px;
-        font-size: 12px;
-        margin: 0;
+        flex: 1 1 0; /* Divide o espaço uniformemente entre os 3 botões */
+        padding: 8px 5px;
+        font-size: 11px; /* Fonte menor para caber em telas estreitas */
+        margin: 0 2px;
+        text-align: center;
+        white-space: nowrap; /* Evita quebra de linha do texto do botão */
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 
     .navbar {
@@ -155,6 +126,10 @@ body {
         padding-top: 130px;
     }
 }
+/* ========================================================================= */
+/* O bloco de CSS que forçava os botões a empilharem (próximo à linha 316) FOI REMOVIDO */
+/* ========================================================================= */
+
 
 /* Navigation */
 .navbar {
@@ -206,6 +181,18 @@ body {
     background-color: #FFE500;
     margin: 4px 0;
     transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .nav-menu {
@@ -329,184 +316,184 @@ body {
 
 /* Services Section */
 .services {
-  padding: 60px 20px;
-  background-color: #f8f9fa;
-  text-align: center;
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
 }
 
 .services h2 {
-  font-size: 36px;
-  margin-bottom: 50px;
-  color: #5B7BA6;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #5B7BA6;
 }
 
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
 /* Service Card */
 .service-card {
-  position: relative;
-  height: 280px;
-  border-radius: 12px;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    height: 280px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .service-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    transform: scale(1.03);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
 }
 
 /* Overlay for text */
 .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 50, 0.6);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  transition: background 0.3s ease;
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 50, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background 0.3s ease;
 }
 
 .overlay h3 {
-  color: #FFE500;
-  font-size: 24px;
-  margin-bottom: 10px;
+    color: #FFE500;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .overlay p {
-  font-size: 16px;
-  max-width: 300px;
-  margin-bottom: 15px;
+    font-size: 16px;
+    max-width: 300px;
+    margin-bottom: 15px;
 }
 
 .service-link {
-  background-color: #FFE500;
-  color: #5B7BA6;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+    background-color: #FFE500;
+    color: #5B7BA6;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .service-link:hover {
-  background-color: #FFD700;
+    background-color: #FFD700;
 }
 
-/* Responsividade */
+/* Responsividade de Serviços */
 @media (max-width: 768px) {
-  .service-card {
-    height: 220px;
-  }
+    .service-card {
+        height: 220px;
+    }
 
-  .overlay h3 {
-    font-size: 20px;
-  }
+    .overlay h3 {
+        font-size: 20px;
+    }
 
-  .overlay p {
-    font-size: 14px;
-  }
+    .overlay p {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 480px) {
-  .service-card {
-    height: 180px;
-  }
+    .service-card {
+        height: 180px;
+    }
 
-  .overlay h3 {
-    font-size: 18px;
-  }
+    .overlay h3 {
+        font-size: 18px;
+    }
 
-  .overlay p {
-    font-size: 13px;
-  }
+    .overlay p {
+        font-size: 13px;
+    }
 
-  .service-link {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
+    .service-link {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }
 
 /* Imagens config (agora responsiva) */
 .config {
-  width: 100%;
-  max-width: 140px;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 15px auto;
+    width: 100%;
+    max-width: 140px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px auto;
 }
 
 /* 📸 Seção dos serviços com imagem lateral */
 .plumbing-services {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-wrap: wrap; /* quebra pro celular */
-  gap: 40px;
-  margin: 60px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap; /* quebra pro celular */
+    gap: 40px;
+    margin: 60px 0;
 }
 
 .services-text {
-  flex: 1 1 350px;
+    flex: 1 1 350px;
 }
 
 .services-text h2 {
-  color: #5B7BA6;
-  margin-bottom: 20px;
-  font-size: 32px;
+    color: #5B7BA6;
+    margin-bottom: 20px;
+    font-size: 32px;
 }
 
 .services-text ul {
-  list-style: disc;
-  padding-left: 20px;
-  font-size: 18px;
-  line-height: 1.8;
+    list-style: disc;
+    padding-left: 20px;
+    font-size: 18px;
+    line-height: 1.8;
 }
 
 .services-image {
-  flex: 1 1 350px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    flex: 1 1 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .services-image img {
-  width: 100%;
-  max-width: 420px;
-  margin-top: 130px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  object-fit: cover;
+    width: 100%;
+    max-width: 420px;
+    margin-top: 130px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    object-fit: cover;
 }
 
 /* 📱 Responsivo */
 @media (max-width: 768px) {
-  .plumbing-services {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+    .plumbing-services {
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+    }
 
-  .services-text ul {
-    padding-left: 0;
-  }
+    .services-text ul {
+        padding-left: 0;
+    }
 
-  .services-image img {
-    max-width: 90%;
-  }
+    .services-image img {
+        max-width: 90%;
+    }
 }
 
 /* CTA Section */
@@ -662,18 +649,7 @@ body {
         display: flex;
     }
 
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(8px, 8px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-    }
-
+    /* As animações do hambúrguer foram mantidas */
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -700,17 +676,8 @@ body {
         padding: 15px;
         border-bottom: 1px solid #4A6A96;
     }
-
-    .header-actions {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .btn-header {
-        width: 90%;
-        text-align: center;
-    }
-
+    
+    /* Regras de mobile que não conflitam com a navegação foram mantidas */
     .video-placeholder {
         height: 250px;
     }
@@ -803,59 +770,58 @@ body {
 }
 
 .carousel-container {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .carousel {
-  position: relative;
+    position: relative;
 }
 
 .slide {
-  display: none;
-  width: 100%;
+    display: none;
+    width: 100%;
 }
 
 .slide.active {
-  display: block;
+    display: block;
 }
 
 .slide img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .prev,
 .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 24px;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-  z-index: 2;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    z-index: 2;
 }
 
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .prev {
-  left: 15px;
+    left: 15px;
 }
 
 .next {
-  right: 15px;
+    right: 15px;
 }
-
