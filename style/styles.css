@@ -825,3 +825,7 @@ body {
 .next {
     right: 15px;
 }
+
+.btn-cta {
+    text-align: center;
+}
