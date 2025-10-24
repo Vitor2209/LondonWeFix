@@ -829,3 +829,22 @@ body {
 .btn-cta {
     text-align: center;
 }
+
+.social-icons {
+    /* Ativa o Flexbox: faz com que os elementos filhos (os <li>) se alinhem em uma linha */
+    display: flex; 
+    
+    /* Remove os marcadores de lista (bolinhas ou quadrados) */
+    list-style: none;
+    
+    /* Remove o padding padrão que o navegador coloca na UL */
+    padding: 0;
+    
+    /* Opcional: Centraliza os ícones dentro do container, se desejar */
+    /* justify-content: center; */
+}
+
+.social-icons li {
+    /* Adiciona um espaço entre cada ícone. Ajuste 15px se precisar de mais ou menos espaço. */
+    margin-right: 15px;
+}
