@@ -173,6 +173,24 @@ body {
     /* Ex: max-width: 180px; */
 }
 
+/* Estilos para telas menores, geralmente tablets e celulares */
+@media (max-width: 768px) {
+
+    /* Altera o tamanho da imagem da logo */
+    .logo-img {
+        /* Defina a nova largura que você quer para a logo no mobile */
+        width: 240px; 
+        /* Garante que a altura se ajuste proporcionalmente */
+        height: auto; 
+    }
+
+    /* Opcional: Se a logo ficar muito apertada ou desalinhada, você pode ajustar o contêiner. */
+    .logo {
+        /* Adiciona um espaço extra acima e abaixo da logo no mobile, se necessário */
+        padding: 10px 0; 
+    }
+}
+
 /* Estilos para a imagem da logo em desktop (base) */
 .logo-img {
     max-width: 102%; /* Garante que a imagem nunca ultrapasse a largura do contêiner pai (.logo) */
