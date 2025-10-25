@@ -175,7 +175,7 @@ body {
 
 /* Estilos para a imagem da logo em desktop (base) */
 .logo-img {
-    max-width: 100%; /* Garante que a imagem nunca ultrapasse a largura do contêiner pai (.logo) */
+    max-width: 102%; /* Garante que a imagem nunca ultrapasse a largura do contêiner pai (.logo) */
     height: auto;    /* Mantém a proporção da imagem ao redimensionar */
     display: block;  /* Remove espaços extras e permite controle total de layout */
     /* Se você tiver uma imagem de logo maior para desktop, defina um max-width aqui */
