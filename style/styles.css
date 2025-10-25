@@ -59,10 +59,10 @@ body {
     color: #5B7BA6;
 }
 
-/* ========= VERSÃO MOBILE - ALTERAÇÕES APLICADAS AQUI ========= */
+/* ========= VERSÃO MOBILE - ALTERAÇÕES APLICADAS AQUI (SEÇÕES DO HEADER/NAVBAR) ========= */
 @media (max-width: 768px) {
     .header {
-        position: fixed; /* MANTIDO FIXO */
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
@@ -78,54 +78,68 @@ body {
     /* ALTERAÇÃO 1: Garante que os botões fiquem lado a lado */
     .header-actions {
         display: flex;
-        flex-direction: row; /* LADO A LADO */
-        justify-content: space-between; /* Distribui o espaço */
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
         flex-wrap: nowrap;
-        padding: 8px 10px; /* Padding ajustado */
-        gap: 5px; 
+        padding: 8px 10px;
+        gap: 5px;
     }
 
     /* ALTERAÇÃO 2: Ajusta os botões para dividirem o espaço de forma uniforme */
     .btn-header {
-        flex: 1 1 0; /* Divide o espaço uniformemente entre os 3 botões */
+        flex: 1 1 0;
         padding: 8px 5px;
-        font-size: 11px; /* Fonte menor para caber em telas estreitas */
+        font-size: 11px;
         margin: 0 2px;
         text-align: center;
-        white-space: nowrap; /* Evita quebra de linha do texto do botão */
+        white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
     }
 
-    .navbar {
+    /* O estilo .navbar aqui estava redundante com o global abaixo e será ajustado */
+    /* .navbar {
         text-align: center;
         margin-top: 6px;
+    } */
+
+    /* Regras da logo dentro do media query principal (768px) */
+    .logo-img {
+        width: 100px; /* Define largura fixa para a imagem */
+        height: auto; /* Mantém a proporção com base na largura */
     }
 
-    .logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 4px;
-    }
-
-    .logo h1 {
+    /* Os estilos de h1 e .logo-subtitle dentro deste media query serão removidos, pois a logo agora é uma imagem */
+    /* .logo h1 {
         font-size: 20px;
         margin: 0;
         line-height: 1.1;
-    }
-
-    .logo-subtitle {
+    } */
+    /* .logo-subtitle {
         display: block;
         font-size: 14px;
-    }
+    } */
 
     /* evita que o conteúdo fique atrás do header fixo */
     body {
         padding-top: 130px;
     }
 }
+
+/* Regras específicas para a logo em telas até 480px */
+@media (max-width: 480px) {
+    .logo-img {
+        width: 50px; /* Define largura fixa para a imagem */
+        height: auto; /* Mantém a proporção */
+    }
+
+    /* O estilo de h1 aqui também será removido, pois a logo agora é uma imagem */
+    /* .logo h1 {
+        font-size: 24px;
+    } */
+}
+
 /* ========================================================================= */
 /* O bloco de CSS que forçava os botões a empilharem (próximo à linha 316) FOI REMOVIDO */
 /* ========================================================================= */
@@ -146,6 +160,31 @@ body {
     margin: 0 auto;
 }
 
+/* ========================================= */
+/* ESTILOS DA LOGO COM A IMAGEM (AJUSTADO)   */
+/* ========================================= */
+
+.logo {
+    display: flex;
+    justify-content: center; /* Centraliza a imagem da logo horizontalmente */
+    align-items: center;     /* Centraliza a imagem da logo verticalmente */
+    margin-top: 4px;         /* Mantém seu margin-top original */
+    /* Se precisar limitar a largura do contêiner da logo em desktop, pode adicionar um max-width aqui */
+    /* Ex: max-width: 180px; */
+}
+
+/* Estilos para a imagem da logo em desktop (base) */
+.logo-img {
+    max-width: 100%; /* Garante que a imagem nunca ultrapasse a largura do contêiner pai (.logo) */
+    height: auto;    /* Mantém a proporção da imagem ao redimensionar */
+    display: block;  /* Remove espaços extras e permite controle total de layout */
+    /* Se você tiver uma imagem de logo maior para desktop, defina um max-width aqui */
+    /* Ex: max-width: 120px; */
+}
+
+/* Os estilos para h1 e .logo-subtitle dentro de .logo NÃO são mais aplicados à logo
+   e foram removidos/comentados para evitar confusão ou estilos órfãos. */
+/*
 .logo h1 {
     color: #FFE500;
     font-size: 20px;
@@ -160,6 +199,7 @@ body {
     color: #FF4500;
     letter-spacing: 3px;
 }
+*/
 
 #red {
     background-color: #FF4500;
@@ -341,13 +381,13 @@ body {
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .service-card:hover {
     transform: scale(1.03);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
 }
 
 /* Overlay for text */
@@ -440,7 +480,7 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    flex-wrap: wrap; /* quebra pro celular */
+    flex-wrap: wrap;
     gap: 40px;
     margin: 60px 0;
 }
@@ -475,14 +515,14 @@ body {
     margin-top: 130px;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     object-fit: cover;
 }
 
 /* 📱 Responsivo */
 @media (max-width: 768px) {
     .plumbing-services {
-        flex-direction: row;
+        flex-direction: row; /* Mantido como linha para evitar quebras indesejadas */
         align-items: center;
         text-align: center;
     }
@@ -643,7 +683,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive (geral) */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -653,14 +693,14 @@ body {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 180px;
+        top: 180px; /* Ajuste se o header fixo mudar de altura em mobile */
         flex-direction: column;
         background-color: #5B7BA6;
         width: 100%;
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
-        max-height: calc(100vh - 180px);
+        max-height: calc(100vh - 180px); /* Ajusta a altura máxima do menu */
         overflow-y: auto;
     }
 
@@ -676,7 +716,7 @@ body {
         padding: 15px;
         border-bottom: 1px solid #4A6A96;
     }
-    
+
     /* Regras de mobile que não conflitam com a navegação foram mantidas */
     .video-placeholder {
         height: 250px;
@@ -720,7 +760,7 @@ body {
 
     /* Cards responsivos */
     .service-card {
-        max-width: 90%;
+        max-width: 90%; /* Ajuste o max-width aqui se necessário */
         padding: 20px;
     }
 
@@ -730,9 +770,7 @@ body {
 }
 
 @media (max-width: 480px) {
-    .logo h1 {
-        font-size: 24px;
-    }
+    /* As regras da logo-img já estão mais acima, específicas para @media (max-width: 480px) */
 
     .page-header h1 {
         font-size: 28px;
@@ -747,7 +785,7 @@ body {
     }
 
     .service-card {
-        max-width: 95%;
+        max-width: 95%; /* Ajuste o max-width aqui se necessário */
         padding: 15px;
     }
 
@@ -831,20 +869,11 @@ body {
 }
 
 .social-icons {
-    /* Ativa o Flexbox: faz com que os elementos filhos (os <li>) se alinhem em uma linha */
-    display: flex; 
-    
-    /* Remove os marcadores de lista (bolinhas ou quadrados) */
+    display: flex;
     list-style: none;
-    
-    /* Remove o padding padrão que o navegador coloca na UL */
     padding: 0;
-    
-    /* Opcional: Centraliza os ícones dentro do container, se desejar */
-    /* justify-content: center; */
 }
 
 .social-icons li {
-    /* Adiciona um espaço entre cada ícone. Ajuste 15px se precisar de mais ou menos espaço. */
     margin-right: 15px;
 }
