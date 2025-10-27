@@ -88,50 +88,34 @@ body {
 
     /* ALTERAÇÃO 2: Ajusta os botões para dividirem o espaço de forma uniforme */
     .btn-header {
-        /* FORMATO CIRCULAR */
-        width: 90px;
-        /* Define o tamanho da largura */
-        height: 90px;
-        /* Define o tamanho da altura (igual à largura para ser círculo) */
-        border-radius: 50%;
-        /* Transforma o quadrado em um círculo */
+    /* FORMATO CIRCULAR */
+    width: 90px;        /* Define o tamanho da largura */
+    height: 90px;       /* Define o tamanho da altura (igual à largura para ser círculo) */
+    border-radius: 50%; /* Transforma o quadrado em um círculo */
+    
+    /* CORES E TEXTO */
+    background-color: #f77f00; /* Cor Laranja da imagem */
+    color: white;           /* Texto branco */
+    font-weight: bold;      /* Texto em negrito */
+    font-size: 13px;        /* Tamanho da fonte */
+    text-decoration: none;  /* Remove sublinhado */
 
-        /* CORES E TEXTO */
-        background-color: #f77f00;
-        /* Cor Laranja da imagem */
-        color: white;
-        /* Texto branco */
-        font-weight: bold;
-        /* Texto em negrito */
-        font-size: 13px;
-        /* Tamanho da fonte */
-        text-decoration: none;
-        /* Remove sublinhado */
+    /* CENTRALIZAÇÃO DO TEXTO */
+    display: flex;          /* Usa flexbox para alinhar o texto */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    text-align: center;      /* Garante a centralização */
 
-        /* CENTRALIZAÇÃO DO TEXTO */
-        display: flex;
-        /* Usa flexbox para alinhar o texto */
-        justify-content: center;
-        /* Centraliza horizontalmente */
-        align-items: center;
-        /* Centraliza verticalmente */
-        text-align: center;
-        /* Garante a centralização */
+    /* REMOVE PROPRIEDADES ANTIGAS CONFLITANTES */
+    flex: none; /* Impede que ele se estique para ocupar a largura (essencial!) */
+    margin: 0 5px; /* Espaçamento entre eles */
+    
+    transition: background-color 0.3s ease;
+}
 
-        /* REMOVE PROPRIEDADES ANTIGAS CONFLITANTES */
-        flex: none;
-        /* Impede que ele se estique para ocupar a largura (essencial!) */
-        margin: 0 5px;
-        /* Espaçamento entre eles */
-
-        transition: background-color 0.3s ease;
-    }
-
-    .btn-header:hover {
-        background-color: #d16b00;
-        /* Efeito ao passar o mouse */
-    }
-
+.btn-header:hover {
+    background-color: #d16b00; /* Efeito ao passar o mouse */
+}
     /* O estilo .navbar aqui estava redundante com o global abaixo e será ajustado */
     /* .navbar {
         text-align: center;
@@ -140,10 +124,8 @@ body {
 
     /* Regras da logo dentro do media query principal (768px) */
     .logo-img {
-        width: 100px;
-        /* Define largura fixa para a imagem */
-        height: auto;
-        /* Mantém a proporção com base na largura */
+        width: 100px; /* Define largura fixa para a imagem */
+        height: auto; /* Mantém a proporção com base na largura */
     }
 
     /* Os estilos de h1 e .logo-subtitle dentro deste media query serão removidos, pois a logo agora é uma imagem */
@@ -166,10 +148,8 @@ body {
 /* Regras específicas para a logo em telas até 480px */
 @media (max-width: 480px) {
     .logo-img {
-        width: 50px;
-        /* Define largura fixa para a imagem */
-        height: auto;
-        /* Mantém a proporção */
+        width: 50px; /* Define largura fixa para a imagem */
+        height: auto; /* Mantém a proporção */
     }
 
     /* O estilo de h1 aqui também será removido, pois a logo agora é uma imagem */
@@ -204,12 +184,9 @@ body {
 
 .logo {
     display: flex;
-    justify-content: center;
-    /* Centraliza a imagem da logo horizontalmente */
-    align-items: center;
-    /* Centraliza a imagem da logo verticalmente */
-    margin-top: 4px;
-    /* Mantém seu margin-top original */
+    justify-content: center; /* Centraliza a imagem da logo horizontalmente */
+    align-items: center;     /* Centraliza a imagem da logo verticalmente */
+    margin-top: 4px;         /* Mantém seu margin-top original */
     /* Se precisar limitar a largura do contêiner da logo em desktop, pode adicionar um max-width aqui */
     /* Ex: max-width: 180px; */
 }
@@ -220,26 +197,23 @@ body {
     /* Altera o tamanho da imagem da logo */
     .logo-img {
         /* Defina a nova largura que você quer para a logo no mobile */
-        width: 240px;
+        width: 240px; 
         /* Garante que a altura se ajuste proporcionalmente */
-        height: auto;
+        height: auto; 
     }
 
     /* Opcional: Se a logo ficar muito apertada ou desalinhada, você pode ajustar o contêiner. */
     .logo {
         /* Adiciona um espaço extra acima e abaixo da logo no mobile, se necessário */
-        padding: 10px 0;
+        padding: 10px 0; 
     }
 }
 
 /* Estilos para a imagem da logo em desktop (base) */
 .logo-img {
-    max-width: 90%;
-    /* Garante que a imagem nunca ultrapasse a largura do contêiner pai (.logo) */
-    height: auto;
-    /* Mantém a proporção da imagem ao redimensionar */
-    display: block;
-    /* Remove espaços extras e permite controle total de layout */
+    max-width: 90%; /* Garante que a imagem nunca ultrapasse a largura do contêiner pai (.logo) */
+    height: auto;    /* Mantém a proporção da imagem ao redimensionar */
+    display: block;  /* Remove espaços extras e permite controle total de layout */
     /* Se você tiver uma imagem de logo maior para desktop, defina um max-width aqui */
     /* Ex: max-width: 120px; */
 }
@@ -584,8 +558,7 @@ body {
 /* 📱 Responsivo */
 @media (max-width: 768px) {
     .plumbing-services {
-        flex-direction: row;
-        /* Mantido como linha para evitar quebras indesejadas */
+        flex-direction: row; /* Mantido como linha para evitar quebras indesejadas */
         align-items: center;
         text-align: center;
     }
@@ -756,16 +729,14 @@ body {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 180px;
-        /* Ajuste se o header fixo mudar de altura em mobile */
+        top: 180px; /* Ajuste se o header fixo mudar de altura em mobile */
         flex-direction: column;
         background-color: #5B7BA6;
         width: 100%;
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
-        max-height: calc(100vh - 180px);
-        /* Ajusta a altura máxima do menu */
+        max-height: calc(100vh - 180px); /* Ajusta a altura máxima do menu */
         overflow-y: auto;
     }
 
@@ -825,8 +796,7 @@ body {
 
     /* Cards responsivos */
     .service-card {
-        max-width: 90%;
-        /* Ajuste o max-width aqui se necessário */
+        max-width: 90%; /* Ajuste o max-width aqui se necessário */
         padding: 20px;
     }
 
@@ -851,8 +821,7 @@ body {
     }
 
     .service-card {
-        max-width: 95%;
-        /* Ajuste o max-width aqui se necessário */
+        max-width: 95%; /* Ajuste o max-width aqui se necessário */
         padding: 15px;
     }
 
