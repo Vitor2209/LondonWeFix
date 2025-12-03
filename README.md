@@ -54,8 +54,8 @@ This is the static version of the website — fast, lightweight, and fully respo
 
 **WEFIX London**  
 📍 London, United Kingdom  
-📞 Phone: 020 7889 1111  
-📧 Email: info@wefix.london  
+📞 Phone: 44 0792 0515 456 
+📧 Email: info@londonwefix.co.uk
 🌐 Website: [www.wefix.london](https://www.wefix.london)
 
 ---
