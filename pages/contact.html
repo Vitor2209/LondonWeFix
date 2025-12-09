@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="src/imagens/android-chrome-512x512-removebg-preview.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../src/imagens/android-chrome-512x512-removebg-preview.png" type="image/x-icon">
   <title>Contact Us - London WeFix</title>
-  <link rel="stylesheet" href="style/styles.css" />
+  <link rel="stylesheet" href="../style/styles.css" />
 
   <!-- Estilos específicos do formulário (pequena extensão sobre seu styles.css para manter tudo consistente) -->
   <style>
@@ -91,21 +91,21 @@
   <!-- Header -->
   <header class="header">
     <div class="top-bar">
-      <p>London WEFIX, our superior service company as away we fix!</p>
+      <p>London We Fix, Where Integrity Meets Every Fix!</p>
     </div>
 
     <div class="header-actions">
       <a href="contact.html" class="btn-header">BOOK NOW</a>
-      <a href="tel:447920515456" class="btn-header">CALL NOW</a>
-      <a href="https://wa.me/447920515456?text=Hi+there!+I%E2%80%99d+like+to+get+a+quote,+please."
+      <a href="tel:4407599686105" class="btn-header">CALL NOW</a>
+      <a href="https://wa.me/4407599686105?text=Hi+there!+I%E2%80%99d+like+to+get+a+quote,+please."
         class="btn-header">CHAT NOW</a>
     </div>
 
     <nav class="navbar">
       <div class="nav-container">
         <div class="logo">
-          <a href="index.html">
-            <img src="src/imagens/logo-removebg.png" alt="London WeFix Logo" class="logo-img">
+          <a href="../index.html">
+            <img src="../src/imagens/logo-removebg.png" alt="London WeFix Logo" class="logo-img">
           </a>
         </div>
 
@@ -146,14 +146,14 @@
 
           <div style="margin-top: 30px;">
             <h3 style="color: #5B7BA6; margin-bottom: 10px;">Phone</h3>
-            <p style="font-size: 24px; font-weight: bold; color: #e74c3c;"><a href="tel:02078891111"
-                style="color: #e74c3c; text-decoration: none;">44 0792 0515 456</a></p>
+            <p style="font-size: 24px; font-weight: bold; color: #e74c3c;"><a href="tel:4407599686105"
+                style="color: #e74c3c; text-decoration: none;">44 0759 9686 105</a></p>
             <p>Available 24/7 for emergencies</p>
           </div>
 
           <div style="margin-top: 30px;">
             <h3 style="color: #5B7BA6; margin-bottom: 10px;">Email</h3>
-            <p><a href="mailto:info@wefix.london" style="color: #5B7BA6;">info@londonwefix.co.uk</a></p>
+            <p><a href="mailto:info@londonwefix.co.uk" style="color: #5B7BA6;">info@londonwefix.co.uk</a></p>
           </div>
 
           <div style="margin-top: 30px;">
@@ -238,7 +238,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>LONDON WEFIX</h3>
+          <h3>London WEFIX</h3>
           <p>London's superior service company</p>
           <p>Available 24/7 for emergencies</p>
         </div>
@@ -262,7 +262,7 @@
         </div>
         <div class="footer-section">
           <h4>Contact</h4>
-          <p>Phone: 44 0792 0515 456</p>
+          <p>Phone: 44 0759 9686 105</p>
           <p>Email: info@londonwefix.co.uk</p>
           <p>24/7 Emergency Service</p>
         </div>
@@ -291,7 +291,7 @@
   </footer>
 
   <!-- Seus scripts existentes (menu, vídeo, etc) -->
-  <script src="script/script.js"></script>
+  <script src="../script/script.js"></script>
 
   <!-- Script do formulário (fetch + exibição de mensagem sem redirecionamento) -->
   <script>
@@ -332,13 +332,13 @@
               }, 800);
             } else {
               // resposta não-ok: mostrar alerta e reabilitar botão
-              alert('❌ Ocorreu um problema ao enviar a mensagem. Por favor, tente novamente.');
+              alert('❌ There was a problem sending your message. Please try again.');
               submitBtn.disabled = false;
               submitBtn.removeAttribute('aria-disabled');
             }
           })
           .catch(err => {
-            alert('⚠️ Erro ao enviar: ' + (err && err.message ? err.message : 'Verifique sua conexão.'));
+            alert('⚠️ Error sending message ' + (err && err.message ? err.message : 'Check your connection.'));
             submitBtn.disabled = false;
             submitBtn.removeAttribute('aria-disabled');
           });
