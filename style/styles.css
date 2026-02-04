@@ -19,21 +19,25 @@ body {
 }
 
 /* HEADER GERAL (mantém seu estilo atual) */
+/* Header principal */
 .header {
-    background-color: #5B7BA6;
-    color: white;
+    background-color: #4B4F54; /* cinza grafite */
+    color: #FFFFFF;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
+/* Top bar mais clara */
 .top-bar {
-    background-color: #4A6A96;
+    background-color: #6B7076; /* cinza mais claro */
+    color: #FFFFFF;
     text-align: center;
     padding: 10px;
     font-weight: bold;
     font-size: 14px;
 }
+
 
 .header-actions {
     display: flex;
@@ -45,8 +49,8 @@ body {
 
 .btn-header {
     background-color: transparent;
-    border: 2px solid #FFE500;
-    color: #FFE500;
+    border: 2px solid #ff7300;
+    color: #ff7300;
     padding: 12px 30px;
     text-decoration: none;
     font-weight: bold;
@@ -55,7 +59,7 @@ body {
 }
 
 .btn-header:hover {
-    background-color: #FFE500;
+    background-color: #ff7300;
     color: #5B7BA6;
 }
 
@@ -114,7 +118,7 @@ body {
 }
 
 .btn-header:hover {
-    background-color: #d16b00; /* Efeito ao passar o mouse */
+    background-color: #ff7300; /* Efeito ao passar o mouse */
 }
     /* O estilo .navbar aqui estava redundante com o global abaixo e será ajustado */
     /* .navbar {
@@ -151,21 +155,11 @@ body {
         width: 50px; /* Define largura fixa para a imagem */
         height: auto; /* Mantém a proporção */
     }
-
-    /* O estilo de h1 aqui também será removido, pois a logo agora é uma imagem */
-    /* .logo h1 {
-        font-size: 24px;
-    } */
 }
-
-/* ========================================================================= */
-/* O bloco de CSS que forçava os botões a empilharem (próximo à linha 316) FOI REMOVIDO */
-/* ========================================================================= */
-
 
 /* Navigation */
 .navbar {
-    background-color: #5B7BA6;
+    background-color: #949494; 
     padding: 0;
 }
 
@@ -218,28 +212,9 @@ body {
     /* Ex: max-width: 120px; */
 }
 
-/* Os estilos para h1 e .logo-subtitle dentro de .logo NÃO são mais aplicados à logo
-   e foram removidos/comentados para evitar confusão ou estilos órfãos. */
-/*
-.logo h1 {
-    color: #FFE500;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(255, 69, 0, 0.5);
-}
-
-.logo-subtitle {
-    display: block;
-    font-size: 30px;
-    color: #FF4500;
-    letter-spacing: 3px;
-}
-*/
 
 #red {
-    background-color: #FF4500;
-    border-radius: 10px;
+    color: rgb(255, 102, 0);
 }
 
 .hamburger {
@@ -293,7 +268,7 @@ body {
 }
 
 .nav-menu li a:hover {
-    color: #FFE500;
+    color: #ff7300;
 }
 
 /* Hero Section */
@@ -310,41 +285,6 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px 0;
-}
-
-.video-container {
-    max-width: 1000px;
-    margin: 0 auto 30px;
-}
-
-.video-placeholder {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.play-button {
-    width: 80px;
-    height: 80px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    color: #5B7BA6;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.play-button:hover {
-    transform: scale(1.1);
 }
 
 .hero-content {
@@ -434,9 +374,9 @@ body {
 
 /* Container para a lista de membros */
 .team-container {
-    display: flex; /* Permite que os membros se alinhem lado a lado se houver espaço */
-    flex-direction: column; /* Padrão: um membro abaixo do outro */
-    gap: 40px; /* Espaço entre os perfis */
+    display: flex; 
+    flex-direction: column; 
+    gap: 40px; 
 }
 
 /* Estilo para cada membro da equipe */
@@ -483,14 +423,14 @@ body {
 /* Estilo para telas menores (responsividade) */
 @media (max-width: 768px) {
     .team-member {
-        flex-direction: column; /* Empilha a foto e o texto em telas menores */
-        align-items: center; /* Centraliza a foto e o texto */
+        flex-direction: column; 
+        align-items: center; 
         text-align: center;
     }
 
     .member-photo {
         margin-right: 0;
-        margin-bottom: 15px; /* Adiciona espaço abaixo da foto */
+        margin-bottom: 15px;
     }
 }
 
@@ -557,7 +497,7 @@ body {
 }
 
 .service-link {
-    background-color: #FFE500;
+    background-color: #ff7300;
     color: #5B7BA6;
     padding: 10px 20px;
     border-radius: 6px;
@@ -567,7 +507,7 @@ body {
 }
 
 .service-link:hover {
-    background-color: #FFD700;
+    background-color: #ff7300;
 }
 
 /* Responsividade de Serviços */
@@ -604,7 +544,6 @@ body {
     }
 }
 
-/* Imagens config (agora responsiva) */
 .config {
     width: 100%;
     max-width: 140px;
@@ -702,7 +641,7 @@ body {
 }
 
 .btn-cta {
-    background-color: #FFE500;
+    background-color: #ff7300;
     color: #5B7BA6;
     padding: 15px 40px;
     text-decoration: none;
@@ -713,14 +652,14 @@ body {
 }
 
 .btn-cta:hover {
-    background-color: #FFD700;
+    background-color: #ff7300;
     transform: translateY(-2px);
 }
 
 .btn-cta-secondary {
     background-color: transparent;
-    border: 2px solid #FFE500;
-    color: #FFE500;
+    border: 2px solid #ff7300;
+    color: #ff7300;
     padding: 15px 40px;
     text-decoration: none;
     font-weight: bold;
@@ -730,27 +669,42 @@ body {
 }
 
 .btn-cta-secondary:hover {
-    background-color: #FFE500;
+    background-color: #ff7300;
     color: #5B7BA6;
 }
 
 /* Footer */
 .footer {
-    background-color: #2c3e50;
+    background-color: #949494;
     color: white;
     padding: 40px 20px 20px;
 }
 
+.footer .container {
+    max-width: 1400px;
+    padding: 0 20px;
+}
+
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 30px;
-    margin-bottom: 30px;
+}
+
+.footer-section {
+    max-width: 260px;
+}
+
+.footer-section p {
+    white-space: nowrap;
+    display: flex;
+    gap: 5px;
 }
 
 .footer-section h3,
 .footer-section h4 {
-    color: #FFE500;
+    color: #ff7300;
     margin-bottom: 15px;
 }
 
@@ -769,7 +723,7 @@ body {
 }
 
 .footer-section ul li a:hover {
-    color: #FFE500;
+    color: #ff7300;
 }
 
 .footer-bottom {
@@ -835,7 +789,7 @@ body {
         left: -100%;
         top: 180px; /* Ajuste se o header fixo mudar de altura em mobile */
         flex-direction: column;
-        background-color: #5B7BA6;
+        background-color: #949494;;
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -1017,3 +971,129 @@ body {
 .social-icons li {
     margin-right: 15px;
 }
+
+.page-content.two-column {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 0;
+}
+
+.content-text {
+    flex: 1;
+}
+
+.content-text h2 {
+    margin-bottom: 20px;
+}
+
+.content-text ul {
+    padding-left: 20px;
+}
+
+.content-text li {
+    margin-bottom: 8px;
+}
+
+.content-image {
+    flex: 1;
+}
+
+.content-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .page-content.two-column {
+        flex-direction: column;
+        padding: 40px 0;
+    }
+
+    .content-image {
+        order: -1; /* imagem sobe no mobile */
+    }
+}
+
+.two-column-layout {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    margin: 40px 0;
+}
+
+.content-text {
+    flex: 1;
+}
+
+.content-image {
+    flex: 1;
+}
+
+.content-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .two-column-layout {
+        flex-direction: column;
+    }
+}
+
+/* BLOCO SERVIÇOS COM IMAGEM */
+.services-with-image {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+/* TEXTO */
+.services-text {
+    flex: 1;
+}
+
+.services-text h2 {
+    margin-bottom: 16px;
+}
+
+.services-text ul {
+    padding-left: 20px;
+}
+
+.services-text li {
+    margin-bottom: 8px;
+}
+
+/* IMAGEM */
+.services-image {
+    flex: 1;
+}
+
+.services-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .services-with-image {
+        flex-direction: column;
+    }
+
+    .services-image {
+        margin-top: 24px;
+    }
+}
+
+
+
