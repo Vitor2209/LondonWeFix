@@ -49,15 +49,6 @@ This is the static version of the website — fast, lightweight, and fully respo
 | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) | Interactive features and smooth UX |
 
 ---
-
-## 📞 Contact
-
-**WEFIX London**  
-📍 London, United Kingdom  
-📞 Phone: 44 0792 0515 456 
-📧 Email: info@londonwefix.co.uk
-🌐 Website: [www.wefix.london](https://www.wefix.london)
-
 ---
 
 **WEFIX London** — *London’s superior service company!* 🔧
